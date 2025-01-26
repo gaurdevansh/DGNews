@@ -26,11 +26,11 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField(
+        /*buildConfigField(
             "String",
             "NEWS_API_KEY",
             "\"${apiKeyProperties["API_KEY"]}\""
-        )
+        )*/
     }
     buildFeatures {
         buildConfig = true
@@ -51,6 +51,9 @@ android {
     }
     kotlinOptions {
         jvmTarget = "11"
+    }
+    viewBinding {
+        enable = true
     }
 }
 
@@ -75,5 +78,7 @@ dependencies {
     kapt(libs.androidx.room.compiler)
     implementation(libs.androidx.datastore)
     kapt(libs.androidx.glide.compiler)
+    implementation(libs.androidx.navigation)
+    implementation(libs.androidx.navigation.ui)
 
 }
