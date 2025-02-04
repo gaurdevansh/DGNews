@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">DGNews</string>
+    <string name="top_news">Top News</string>
 </resources>

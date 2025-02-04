@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingVertical="10px"
+    android:layout_height="300px">
+
+    <ImageView
+        android:id="@+id/news_poster"
+        android:layout_width="290px"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:src="@drawable/news_poster_placeholder"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:id="@+id/news_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/news_poster"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="10dp"
+        tools:text="This is a sample news app which fetches news from remote source and then display"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:fontFamily="sans-serif"
+        android:textStyle="bold"
+        android:ellipsize="end"
+        android:maxLines="2" />
+
+    <TextView
+        android:id="@+id/news_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/news_title"
+        app:layout_constraintStart_toStartOf="@id/news_title"
+        android:layout_marginTop="2dp"
+        android:textSize="13sp"
+        android:maxLines="2"
+        android:ellipsize="end"
+        tools:text="This is a sample description of the news which is fetched from remote API." />
+
+    <TextView
+        android:id="@+id/news_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/news_description"
+        app:layout_constraintStart_toStartOf="@id/news_description"
+        tools:text="10min ago"
+        android:textSize="12sp"
+        android:textColor="#808080" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
