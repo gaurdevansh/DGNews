@@ -1,4 +1,4 @@
-package com.example.dgnews.ui
+package com.example.dgnews.ui.home
 
 import android.annotation.SuppressLint
 import android.os.Bundle
@@ -9,9 +9,11 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.dgnews.R
 import com.example.dgnews.databinding.FragmentHomeBinding
-import com.example.dgnews.ui.article.NewsAdapter
+import com.example.dgnews.ui.adapter.NewsAdapter
 
 
 class HomeFragment : Fragment() {
@@ -48,7 +50,10 @@ class HomeFragment : Fragment() {
 
     private fun initAdapter() {
         newsAdapter = NewsAdapter { article ->
-            Toast.makeText(context, article.title, Toast.LENGTH_SHORT).show()
+            val bundle = Bundle().apply {
+                putString("url", article.url)
+            }
+            findNavController().navigate(R.id.action_homeFragment_to_articleFragment, bundle)
         }
         val layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         binding.topNewsRv.layoutManager = layoutManager

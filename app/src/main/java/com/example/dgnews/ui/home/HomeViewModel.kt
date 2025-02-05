@@ -1,4 +1,4 @@
-package com.example.dgnews.ui
+package com.example.dgnews.ui.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

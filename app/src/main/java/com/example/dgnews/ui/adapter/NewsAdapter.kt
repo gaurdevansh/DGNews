@@ -1,4 +1,4 @@
-package com.example.dgnews.ui.article
+package com.example.dgnews.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
