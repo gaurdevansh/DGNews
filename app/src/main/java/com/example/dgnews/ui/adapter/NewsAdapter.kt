@@ -40,7 +40,7 @@ class NewsAdapter(
             with(binding) {
                 newsTitle.text = article.title
                 newsDescription.text = article.description
-                newsTime.text = article.publishedAt
+                newsTime.text = article.publishedAt?.subSequence(0, 10)
                 Glide.with(root.context)
                     .load(article.urlToImage)
                     .into(newsPoster)

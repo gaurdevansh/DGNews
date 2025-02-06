@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">DGNews</string>
     <string name="top_news">Top News</string>
+    <string name="read_full_article">Read Full Article</string>
 </resources>

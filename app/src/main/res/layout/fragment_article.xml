@@ -10,7 +10,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/news_poster_cardview"
         android:layout_width="match_parent"
-        android:layout_height="500px"
+        android:layout_height="300dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,15 +24,48 @@
             android:scaleType="fitXY" />
         
     </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/back_btn"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        app:layout_constraintTop_toBottomOf="@id/news_poster_cardview"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/bookmark_btn"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/ic_back"
+        android:scaleType="fitXY"/>
+
+    <ImageView
+        android:id="@+id/bookmark_btn"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        app:layout_constraintTop_toTopOf="@id/back_btn"
+        app:layout_constraintStart_toEndOf="@id/back_btn"
+        app:layout_constraintEnd_toStartOf="@id/share_btn"
+        app:layout_constraintBottom_toBottomOf="@id/back_btn"
+        android:src="@drawable/ic_bookmark"
+        android:scaleType="fitXY"/>
+
+    <ImageView
+        android:id="@+id/share_btn"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        app:layout_constraintTop_toTopOf="@id/bookmark_btn"
+        app:layout_constraintBottom_toBottomOf="@id/bookmark_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/bookmark_btn"
+        android:src="@drawable/share_icon"
+        android:scaleType="fitXY"/>
     
     <TextView
         android:id="@+id/news_heading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/news_poster_cardview"
+        app:layout_constraintTop_toBottomOf="@id/bookmark_btn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:fontFamily="sans-serif"
         android:textStyle="bold"
         android:textSize="18sp"
@@ -54,6 +87,18 @@
         tools:text="By Author Name" />
 
     <TextView
+        android:id="@+id/news_source"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/news_author"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="@id/news_author"
+        android:textSize="14sp"
+        android:fontFamily="sans-serif"
+        tools:text="ESPN"
+        android:textColor="@color/grey" />
+
+    <TextView
         android:id="@+id/news_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -69,7 +114,7 @@
         android:id="@+id/news_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/news_author"
+        app:layout_constraintTop_toBottomOf="@id/news_source"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="15dp"
@@ -78,6 +123,17 @@
         android:textSize="16sp"
         tools:text="This is a sample text which is fetched from remote API and displayed here to give actual text representaiton" />
 
-
+    <TextView
+        android:id="@+id/news_url"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/news_content"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="10dp"
+        android:textSize="16sp"
+        android:fontFamily="sans-serif"
+        android:autoLink="web"
+        android:textColor="@color/web_link_blue"
+        android:text="@string/read_full_article" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

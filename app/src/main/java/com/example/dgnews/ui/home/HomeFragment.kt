@@ -40,7 +40,7 @@ class HomeFragment : Fragment() {
             Log.d("Articles", "Articles: $articles")
         }*/
         homeViewModel.topNewsResponse.observe(viewLifecycleOwner) { newsResponse ->
-            //Log.d("Articles", newsResponse.articles.toString())
+            Log.d("Articles", newsResponse.articles.toString())
             newsAdapter.updateArticleList(newsResponse.articles)
         }
         homeViewModel.errorMsg.observe(viewLifecycleOwner) { error ->
